@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -25,74 +28,110 @@ public class FormPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btAbreCalc = new javax.swing.JButton();
-        btAbreCadPes = new javax.swing.JButton();
-        btAbreRel = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        barMenuPrincipal = new javax.swing.JMenuBar();
+        mnCadastro = new javax.swing.JMenu();
+        itMnCalculadora = new javax.swing.JMenuItem();
+        itMnCadPes = new javax.swing.JMenuItem();
+        itMnSair = new javax.swing.JMenuItem();
+        mnRelatorio = new javax.swing.JMenu();
+        itMnRelGerPes = new javax.swing.JMenuItem();
+        itMnRelGerPes2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btAbreCalc.setText("Calculadora...");
-        btAbreCalc.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btAbreCalcActionPerformed(evt);
-            }
-        });
+        jLabel1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel1.setText("Projeto");
 
-        btAbreCadPes.setText("Cadastro de pessoas...");
-        btAbreCadPes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btAbreCadPesActionPerformed(evt);
-            }
-        });
+        mnCadastro.setText("Cadastros");
 
-        btAbreRel.setText("Relatório...");
-        btAbreRel.addActionListener(new java.awt.event.ActionListener() {
+        itMnCalculadora.setText("Calculadora...");
+        itMnCalculadora.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btAbreRelActionPerformed(evt);
+                itMnCalculadoraActionPerformed(evt);
             }
         });
+        mnCadastro.add(itMnCalculadora);
+
+        itMnCadPes.setText("Cadastro Pessoas...");
+        itMnCadPes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itMnCadPesActionPerformed(evt);
+            }
+        });
+        mnCadastro.add(itMnCadPes);
+
+        itMnSair.setText("Sair");
+        itMnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itMnSairActionPerformed(evt);
+            }
+        });
+        mnCadastro.add(itMnSair);
+
+        barMenuPrincipal.add(mnCadastro);
+
+        mnRelatorio.setText("Relatório");
+
+        itMnRelGerPes.setText("Relatório Geral de Pessoas...");
+        itMnRelGerPes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itMnRelGerPesActionPerformed(evt);
+            }
+        });
+        mnRelatorio.add(itMnRelGerPes);
+
+        itMnRelGerPes2.setText("Relatório 2...");
+        itMnRelGerPes2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itMnRelGerPes2ActionPerformed(evt);
+            }
+        });
+        mnRelatorio.add(itMnRelGerPes2);
+
+        barMenuPrincipal.add(mnRelatorio);
+
+        setJMenuBar(barMenuPrincipal);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btAbreCalc, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btAbreRel, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btAbreCadPes)
-                .addGap(13, 13, 13))
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addContainerGap(337, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(271, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btAbreCalc)
-                    .addComponent(btAbreRel)
-                    .addComponent(btAbreCadPes))
-                .addContainerGap())
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addContainerGap(242, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btAbreCalcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAbreCalcActionPerformed
-        //FormCalc fCalc = new FormCalc();
-        //fCalc.setVisible(true);
-        //new FormCalc().setVisible(true);
+    private void itMnCalculadoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itMnCalculadoraActionPerformed
         FormCalc.geraCalc().setVisible(true);
-    }//GEN-LAST:event_btAbreCalcActionPerformed
+    }//GEN-LAST:event_itMnCalculadoraActionPerformed
 
-    private void btAbreCadPesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAbreCadPesActionPerformed
+    private void itMnCadPesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itMnCadPesActionPerformed
         FormCadPes.geraCadPes().setVisible(true);
-    }//GEN-LAST:event_btAbreCadPesActionPerformed
+    }//GEN-LAST:event_itMnCadPesActionPerformed
 
-    private void btAbreRelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAbreRelActionPerformed
+    private void itMnRelGerPesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itMnRelGerPesActionPerformed
         FormRelGerPes.geraRelUnic().setVisible(true);
-    }//GEN-LAST:event_btAbreRelActionPerformed
+    }//GEN-LAST:event_itMnRelGerPesActionPerformed
+
+    private void itMnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itMnSairActionPerformed
+        sair();
+    }//GEN-LAST:event_itMnSairActionPerformed
+
+    private void itMnRelGerPes2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itMnRelGerPes2ActionPerformed
+        FormRelGerPes2.geraRelUnic().setVisible(true);
+    }//GEN-LAST:event_itMnRelGerPes2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -129,9 +168,27 @@ public class FormPrincipal extends javax.swing.JFrame {
         });
     }
     
+    public void sair(){
+        int resp = JOptionPane.showConfirmDialog(
+            null,
+            "Deseja realmente sair?",
+            "Saida",
+            JOptionPane.YES_NO_OPTION
+        );
+        if(resp == 0){
+            dispose();
+        }
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btAbreCadPes;
-    private javax.swing.JButton btAbreCalc;
-    private javax.swing.JButton btAbreRel;
+    private javax.swing.JMenuBar barMenuPrincipal;
+    private javax.swing.JMenuItem itMnCadPes;
+    private javax.swing.JMenuItem itMnCalculadora;
+    private javax.swing.JMenuItem itMnRelGerPes;
+    private javax.swing.JMenuItem itMnRelGerPes2;
+    private javax.swing.JMenuItem itMnSair;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenu mnCadastro;
+    private javax.swing.JMenu mnRelatorio;
     // End of variables declaration//GEN-END:variables
 }

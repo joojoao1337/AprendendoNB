@@ -65,14 +65,34 @@ public class FormCalc extends javax.swing.JFrame {
 
         btSubtrair.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btSubtrair.setText("-");
+        btSubtrair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSubtrairActionPerformed(evt);
+            }
+        });
 
         btMultiplicar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btMultiplicar.setText("*");
+        btMultiplicar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btMultiplicarActionPerformed(evt);
+            }
+        });
 
         btDividir.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btDividir.setText("/");
+        btDividir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btDividirActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Raiz Quadrada");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -150,6 +170,22 @@ public class FormCalc extends javax.swing.JFrame {
        somar();
     }//GEN-LAST:event_btSomarActionPerformed
 
+    private void btSubtrairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSubtrairActionPerformed
+        menos();
+    }//GEN-LAST:event_btSubtrairActionPerformed
+
+    private void btMultiplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMultiplicarActionPerformed
+        vezes();
+    }//GEN-LAST:event_btMultiplicarActionPerformed
+
+    private void btDividirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDividirActionPerformed
+        div();
+    }//GEN-LAST:event_btDividirActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     public void somar(){
 
         try{
@@ -157,6 +193,94 @@ public class FormCalc extends javax.swing.JFrame {
             int b = Integer.parseInt(cxVal2.getText());
             int c = a+b;
             cxResult.setText(Integer.toString(c));            
+        }
+        catch(NumberFormatException nfe){
+            JOptionPane.showMessageDialog(
+               null,
+               "Os valores devem ser inteiros",
+               "Erro da Dados",
+               JOptionPane.ERROR_MESSAGE
+            );
+            cxVal1.setText("");
+            cxVal2.setText("");
+            cxVal1.requestFocus();
+        }
+
+    } 
+    
+    public void menos(){
+
+        try{
+            int a = Integer.parseInt(cxVal1.getText());
+            int b = Integer.parseInt(cxVal2.getText());
+            int c = a-b;
+            cxResult.setText(Integer.toString(c));            
+        }
+        catch(NumberFormatException nfe){
+            JOptionPane.showMessageDialog(
+               null,
+               "Os valores devem ser inteiros",
+               "Erro da Dados",
+               JOptionPane.ERROR_MESSAGE
+            );
+            cxVal1.setText("");
+            cxVal2.setText("");
+            cxVal1.requestFocus();
+        }
+
+    } 
+    
+    public void vezes(){
+
+        try{
+            int a = Integer.parseInt(cxVal1.getText());
+            int b = Integer.parseInt(cxVal2.getText());
+            int c = a*b;
+            cxResult.setText(Integer.toString(c));            
+        }
+        catch(NumberFormatException nfe){
+            JOptionPane.showMessageDialog(
+               null,
+               "Os valores devem ser inteiros",
+               "Erro da Dados",
+               JOptionPane.ERROR_MESSAGE
+            );
+            cxVal1.setText("");
+            cxVal2.setText("");
+            cxVal1.requestFocus();
+        }
+
+    } 
+    
+    public void div(){
+
+        try{
+            int a = Integer.parseInt(cxVal1.getText());
+            int b = Integer.parseInt(cxVal2.getText());
+            int c = a/b;
+            cxResult.setText(Integer.toString(c));            
+        }
+        catch(NumberFormatException nfe){
+            JOptionPane.showMessageDialog(
+               null,
+               "Os valores devem ser inteiros",
+               "Erro da Dados",
+               JOptionPane.ERROR_MESSAGE
+            );
+            cxVal1.setText("");
+            cxVal2.setText("");
+            cxVal1.requestFocus();
+        }
+
+    } 
+    
+    public void raiz(){
+
+        try{
+            int a = Integer.parseInt(cxVal1.getText());
+            
+            double c = Math.sqrt(a);
+            cxResult.setText(Double.toString(c));            
         }
         catch(NumberFormatException nfe){
             JOptionPane.showMessageDialog(

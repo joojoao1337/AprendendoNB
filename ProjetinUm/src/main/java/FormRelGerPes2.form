@@ -13,9 +13,6 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Abrir..."/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="itMnAbrirActionPerformed"/>
-              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -98,7 +95,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Dialog" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Relat&#xf3;rio Geral de Pessoas"/>
+        <Property name="text" type="java.lang.String" value="Relat&#xf3;rio Geral de Pessoas 2"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">

@@ -11,19 +11,19 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Aluno
  */
-public class FormRelGerPes extends javax.swing.JFrame {
+public class FormRelGerPes2 extends javax.swing.JFrame {
 
-    private static FormRelGerPes relUnic;
+    private static FormRelGerPes2 relUnic;
     private GerPes gp = GerPes.gerGerPes();
     private Pessoa p1 = new Pessoa();
 
-    private FormRelGerPes() {
+    private FormRelGerPes2() {
         initComponents();
     }
     
-    public static FormRelGerPes geraRelUnic(){
+    public static FormRelGerPes2 geraRelUnic(){
         if(relUnic == null){
-            relUnic = new FormRelGerPes();
+            relUnic = new FormRelGerPes2();
         }
         return relUnic;
     }
@@ -56,7 +56,7 @@ public class FormRelGerPes extends javax.swing.JFrame {
         });
 
         LabelNormal.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        LabelNormal.setText("Relatório Geral de Pessoas");
+        LabelNormal.setText("Relatório Geral de Pessoas 2");
 
         tabPes2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -88,11 +88,6 @@ public class FormRelGerPes extends javax.swing.JFrame {
         mnRelatorio.setText("Relatório");
 
         itMnAbrir.setText("Abrir...");
-        itMnAbrir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itMnAbrirActionPerformed(evt);
-            }
-        });
         mnRelatorio.add(itMnAbrir);
 
         barMenuRel.add(mnRelatorio);
@@ -150,10 +145,6 @@ public class FormRelGerPes extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btConsPesActionPerformed
 
-    private void itMnAbrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itMnAbrirActionPerformed
-        FormRelGerPes2.geraRelUnic().setVisible(true);
-    }//GEN-LAST:event_itMnAbrirActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -185,7 +176,7 @@ public class FormRelGerPes extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FormRelGerPes().setVisible(true);
+                new FormRelGerPes2().setVisible(true);
             }
         });
     }
