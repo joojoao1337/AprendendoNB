@@ -24,11 +24,13 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="btAbreCalc" min="-2" pref="117" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="btAbreCalc" min="-2" pref="170" max="-2" attributes="0"/>
-              <EmptySpace pref="48" max="32767" attributes="0"/>
-              <Component id="btAbreCadPes" min="-2" pref="170" max="-2" attributes="0"/>
+              <Component id="btAbreRel" min="-2" pref="126" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
+              <Component id="btAbreCadPes" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -38,6 +40,7 @@
               <EmptySpace pref="271" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btAbreCalc" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btAbreRel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btAbreCadPes" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -60,6 +63,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btAbreCadPesActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btAbreRel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Relat&#xf3;rio..."/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btAbreRelActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

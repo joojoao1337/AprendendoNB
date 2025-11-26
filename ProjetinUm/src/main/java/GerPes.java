@@ -5,8 +5,22 @@ import javax.swing.JOptionPane;
 
 public class GerPes{
     
-    private Pessoa pes = new Pessoa();
-    private List<Pessoa> bdPes = new ArrayList<Pessoa>();
+    private Pessoa pes;
+    private List<Pessoa> bdPes;
+    
+    private static GerPes gerPesUnic;
+    
+    private GerPes(){
+        pes = new Pessoa();
+        bdPes = new ArrayList<Pessoa>();
+    }
+    
+    public static GerPes gerGerPes(){
+        if(gerPesUnic == null){
+            gerPesUnic = new GerPes();
+        }
+        return gerPesUnic;
+    }
     
     public List<Pessoa> getBdPes(){
         return bdPes;

@@ -27,6 +27,7 @@ public class FormPrincipal extends javax.swing.JFrame {
 
         btAbreCalc = new javax.swing.JButton();
         btAbreCadPes = new javax.swing.JButton();
+        btAbreRel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,16 +45,25 @@ public class FormPrincipal extends javax.swing.JFrame {
             }
         });
 
+        btAbreRel.setText("Relatório...");
+        btAbreRel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btAbreRelActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btAbreCalc, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                .addComponent(btAbreCadPes, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btAbreCalc, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btAbreRel, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btAbreCadPes)
+                .addGap(13, 13, 13))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -61,6 +71,7 @@ public class FormPrincipal extends javax.swing.JFrame {
                 .addContainerGap(271, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btAbreCalc)
+                    .addComponent(btAbreRel)
                     .addComponent(btAbreCadPes))
                 .addContainerGap())
         );
@@ -78,6 +89,10 @@ public class FormPrincipal extends javax.swing.JFrame {
     private void btAbreCadPesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAbreCadPesActionPerformed
         FormCadPes.geraCadPes().setVisible(true);
     }//GEN-LAST:event_btAbreCadPesActionPerformed
+
+    private void btAbreRelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAbreRelActionPerformed
+        FormRelGerPes.geraRelUnic().setVisible(true);
+    }//GEN-LAST:event_btAbreRelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -113,9 +128,10 @@ public class FormPrincipal extends javax.swing.JFrame {
             }
         });
     }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btAbreCadPes;
     private javax.swing.JButton btAbreCalc;
+    private javax.swing.JButton btAbreRel;
     // End of variables declaration//GEN-END:variables
 }

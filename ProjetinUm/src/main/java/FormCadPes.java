@@ -7,7 +7,7 @@ import javax.swing.table.DefaultTableModel;
 public class FormCadPes extends javax.swing.JFrame {
 
     private static FormCadPes cadUnic;
-    private GerPes gp = new GerPes();
+    private GerPes gp = GerPes.gerGerPes();
     private Pessoa p1 = new Pessoa();
 
     private FormCadPes() {
@@ -40,8 +40,6 @@ public class FormCadPes extends javax.swing.JFrame {
         btConsPesCpf = new javax.swing.JButton();
         brAltPesCpf = new javax.swing.JButton();
         btDelPesCpf = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tabPes = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Pessoa");
@@ -58,6 +56,11 @@ public class FormCadPes extends javax.swing.JFrame {
         });
 
         btSair.setText("Sair");
+        btSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSairActionPerformed(evt);
+            }
+        });
 
         btInsPes.setText("Inserir");
         btInsPes.addActionListener(new java.awt.event.ActionListener() {
@@ -87,32 +90,6 @@ public class FormCadPes extends javax.swing.JFrame {
             }
         });
 
-        tabPes.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "CPF", "NOME"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        tabPes.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tabPesMouseClicked(evt);
-            }
-        });
-        jScrollPane1.setViewportView(tabPes);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -120,32 +97,28 @@ public class FormCadPes extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(rtCpf)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cxCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btSair)
-                                .addGap(18, 18, 18)
-                                .addComponent(btLimpar))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(rtNome)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cxNome, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btInsPes)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btConsPesCpf)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(brAltPesCpf)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btDelPesCpf)))
-                        .addGap(0, 170, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addGap(12, 12, 12)
+                        .addComponent(rtCpf)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cxCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btSair)
+                        .addGap(18, 18, 18)
+                        .addComponent(btLimpar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(rtNome)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cxNome, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btInsPes)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btConsPesCpf)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(brAltPesCpf)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btDelPesCpf)))
+                .addContainerGap(182, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -166,9 +139,7 @@ public class FormCadPes extends javax.swing.JFrame {
                     .addComponent(btConsPesCpf)
                     .addComponent(brAltPesCpf)
                     .addComponent(btDelPesCpf))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(209, Short.MAX_VALUE))
         );
 
         pack();
@@ -180,7 +151,7 @@ public class FormCadPes extends javax.swing.JFrame {
 
     private void btInsPesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInsPesActionPerformed
         insPes();
-        consTabPes();
+        
     }//GEN-LAST:event_btInsPesActionPerformed
 
     private void btConsPesCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsPesCpfActionPerformed
@@ -189,49 +160,28 @@ public class FormCadPes extends javax.swing.JFrame {
 
     private void brAltPesCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brAltPesCpfActionPerformed
         altPesCpf();
-        consTabPes();
+        
     }//GEN-LAST:event_brAltPesCpfActionPerformed
 
     private void btDelPesCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDelPesCpfActionPerformed
         delPesCpf();
-        consTabPes();
+        
     }//GEN-LAST:event_btDelPesCpfActionPerformed
 
-    private void tabPesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabPesMouseClicked
-        selectTab();
-    }//GEN-LAST:event_tabPesMouseClicked
-
-    public void selectTab() {
-        String valLin = "";
-
-        int posLin = tabPes.getSelectedRow();
-
-        for (int col = 0; col < tabPes.getColumnCount(); col++) {
-            valLin += tabPes.getModel().getValueAt(posLin, col).toString();
-            
-            if(col+1 < tabPes.getColumnCount()){
-                valLin += " - ";
-            }
-        }
-
-        JOptionPane.showMessageDialog(
-                null,
-                "O valor da linha é: " + valLin,
-                "Captura de linha de tabela",
-                1
+    private void btSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSairActionPerformed
+        int resp = JOptionPane.showConfirmDialog(
+            null,
+            "Deseja realmente sair?",
+            "Saida",
+            JOptionPane.YES_NO_OPTION
         );
-    }
-
-    public void consTabPes() {
-        DefaultTableModel tabModel = (DefaultTableModel) tabPes.getModel();
-        int posLin = 0;
-        tabModel.setRowCount(posLin);
-
-        for (Pessoa p : gp.getBdPes()) {
-            tabModel.insertRow(posLin, new Object[]{p.getCpf(), p.getNome()});
-            posLin++;
+        if(resp == 0){
+            dispose();
         }
-    }
+    }//GEN-LAST:event_btSairActionPerformed
+
+
+
 
     public void delPesCpf() {
         try {
@@ -421,9 +371,7 @@ public class FormCadPes extends javax.swing.JFrame {
     private javax.swing.JButton btSair;
     private javax.swing.JTextField cxCpf;
     private javax.swing.JTextField cxNome;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel rtCpf;
     private javax.swing.JLabel rtNome;
-    private javax.swing.JTable tabPes;
     // End of variables declaration//GEN-END:variables
 }
